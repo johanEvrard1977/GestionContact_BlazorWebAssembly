@@ -1,0 +1,53 @@
+﻿@page "/Administrations/Contacts"
+
+<h3 class="Page-title">Contacts</h3>
+
+<br>
+
+@if (contacts == null)
+{
+<text>Loading...</text> }
+else if (contacts.Count() == 0)
+{
+<button @onclick="@(() => Modal.Show<Create>("My Contacts"))" class="btn btn-primary"><GestionContact.Client.Components.ToolTip Text="Create"><i class="fa fa-plus" aria-hidden="true"></i></GestionContact.Client.Components.ToolTip></button>
+
+                <text>No Records Found.</text>
+                                <br /> }
+                                            else
+                                            {
+                                <button @onclick="@(() => Modal.Show<Create>("My Contacts"))" class="btn btn-primary"><GestionContact.Client.Components.ToolTip Text="Create"><i class="fa fa-plus" aria-hidden="true"></i></GestionContact.Client.Components.ToolTip></button>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <table id="dtBasicExample" class="table table-bordered table-hover z-depth-1-half" width="100%">
+                                                            <thead class="grey lighten-2">
+                                                                <tr>
+                                                                    <th>
+                                                                        Title
+                                                                    </th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (ContactShared entity in contacts)
+                                                                {
+                                                <tr>
+                                                    <td>@entity.Nom</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="Administrations/Contacts/Details/@entity.Id"><GestionContact.Client.Components.ToolTip Text="Details"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></GestionContact.Client.Components.ToolTip></a>
+                                                    </td>
+                                                    <td>
+
+                                                        <a class="btn btn-success" @onclick="@(() => ShowEditEntity(@entity.Id))"><GestionContact.Client.Components.ToolTip Text="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></GestionContact.Client.Components.ToolTip></a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-danger" @onclick="@(() => Delete(entity.Id))"><GestionContact.Client.Components.ToolTip Text="Delete"><i class="fa fa-trash" aria-hidden="true"></i></GestionContact.Client.Components.ToolTip></a>
+                                                    </td>
+                                                </tr>}
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>}
+

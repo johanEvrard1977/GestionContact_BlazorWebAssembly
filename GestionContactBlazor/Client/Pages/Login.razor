@@ -1,0 +1,48 @@
+﻿@page "/Login"
+
+
+<h3>Signup</h3>
+
+<EditForm Model="@user" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    @if (InvalidCredentialText != "")
+        {
+            <ul class="validation-error">
+                <li class="validation-message">@InvalidCredentialText</li>
+            </ul>
+        }
+
+
+    <div class="field">
+        <label class="label">Mail</label>
+        <div class="control has-icons-left ">
+            <!--has-icons-right-->
+            <GestionContact.Client.Components.MyInputRazor id="mail" Type="Text" @bind-Value="user.Email" Class="input" Autocomplete="email" />
+            <span class="icon is-small is-left">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+        </div>
+        <p class="help is-danger"> <ValidationMessage For="@(() => user.Email)" /></p>
+    </div>
+
+    <div class="field">
+        <label class="label">Pass</label>
+        <div class="control has-icons-left">
+            <GestionContact.Client.Components.MyInputRazor Type="password" id="password" @bind-Value="user.Password" Class="Input" Autocomplete="current-password" />
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+            </span>
+        </div>
+        <p class="help is-danger"> <ValidationMessage For="@(() => user.Password)" /></p>
+    </div>
+    <div class="field">
+        <p class="control">
+            <button type="submit" class="button is-primary">Sign in</button>
+        </p>
+    </div>
+
+
+</EditForm>
+

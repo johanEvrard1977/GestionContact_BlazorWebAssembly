@@ -1,0 +1,44 @@
+﻿<EditForm Model="@entity" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Nom :</label>
+        <div>
+            <InputText @bind-Value="@entity.LastName" placeholder="Nom" />
+
+            <ValidationMessage For="@(() => entity.LastName)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Prénom :</label>
+        <div>
+            <InputText @bind-Value="@entity.FirstName" placeholder="Prénom" />
+
+            <ValidationMessage For="@(() => entity.FirstName)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date_De_Naissance :</label>
+        <div>
+            <InputText @bind-Value="@entity.Email" placeholder="Email" />
+
+            <ValidationMessage For="@(() => entity.Email)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email :</label>
+        <div>
+            <InputText @bind-Value="@entity.Password" placeholder="Mot de passe" />
+
+            <ValidationMessage For="@(() => entity.Password)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">
+        @ButtonText
+    </button>
+    </EditForm>
+    @code {
+        [Parameter] public UserShared entity { get; set; }
+        [Parameter] public string ButtonText { get; set; } = "Save";
+        [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    }

@@ -1,0 +1,6 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Sources\Blazor\GestionContactBlazor\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Sources\Blazor\GestionContactBlazor\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Blazored.Modal" Path="C:\Users\johan\.nuget\packages\blazored.modal\6.0.1\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Cloudcrate.AspNetCore.Blazor.Browser.Storage" Path="C:\Users\johan\.nuget\packages\cloudcrate.aspnetcore.blazor.browser.storage\3.0.0\build\..\staticwebassets\" />
+</StaticWebAssets>

@@ -1,0 +1,60 @@
+﻿@inherits LayoutComponentBase
+@inject LocalStorage storage
+@inject IJSRuntime JS
+@inject NavigationManager uriHelper
+@using System.Globalization
+@using Cloudcrate.AspNetCore.Blazor.Browser.Storage
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+    <div class="main">
+        <div class="top-row px-4 auth">
+            @if (storage["token"] != null && storage["email"] != null)
+            {
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" @onclick="()=>expandSubNav = !expandSubNav">
+                    @tinfo.ToTitleCase(storage["email"])
+                </button>
+
+                @if (expandSubNav)
+                {
+                <NavLink class="nav-link" @onclick="@Logout">
+                    Sign out
+                </NavLink>}
+            </div>
+            }
+            else
+            {
+            <a href="/Login">
+                Sign in
+            </a>
+            <a href="/Administrations/Users/create">
+                Register
+            </a>}
+        </div>
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+</div>
+
+@code { private bool expandSubNav;
+    private static TextInfo tinfo = CultureInfo.CurrentCulture.TextInfo;
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    async Task Logout()
+    {
+        storage.RemoveItem("email");
+        storage.RemoveItem("token");
+        uriHelper.NavigateTo("/.");
+        await JS.InvokeAsync<bool>("Refresh");
+    } }

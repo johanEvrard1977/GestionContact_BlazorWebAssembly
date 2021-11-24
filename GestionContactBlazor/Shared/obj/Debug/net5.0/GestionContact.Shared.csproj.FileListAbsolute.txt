@@ -1,0 +1,12 @@
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\bin\Debug\net5.0\GestionContact.Shared.deps.json
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\bin\Debug\net5.0\GestionContact.Shared.dll
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\bin\Debug\net5.0\ref\GestionContact.Shared.dll
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\bin\Debug\net5.0\GestionContact.Shared.pdb
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.AssemblyInfoInputs.cache
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.AssemblyInfo.cs
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.csproj.CoreCompileInputs.cache
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.dll
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\ref\GestionContact.Shared.dll
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.pdb
+C:\Sources\Blazor\GestionContactBlazor\GestionContact\GestionContact\Shared\obj\Debug\net5.0\GestionContact.Shared.csprojAssemblyReference.cache
